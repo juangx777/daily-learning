@@ -67,3 +67,6 @@ class Solution:
                 ans.append(nums[index])
 
         return ans
+    
+for i in range(2):
+    print(i)
