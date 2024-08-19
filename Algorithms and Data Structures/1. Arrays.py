@@ -67,6 +67,33 @@ class Solution:
                 ans.append(nums[index])
 
         return ans
-    
-for i in range(4):
-    print(i)
+
+
+# =================================================================================================
+# Stacks
+# =================================================================================================
+
+## Exercise     
+
+# Leetcode 20
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+
+        # using stack DS and hash map in here to find match of each character
+        Stack = []
+        CloseToOpen = {')':'(', ']':'[', '}':'{'}
+
+        for c in s:
+            if c in CloseToOpen:
+                # if stack is not empty and last adding open bracket to the stack eqaul to hash map value then pop the value
+                if Stack and Stack[-1] == CloseToOpen[c]:
+                    Stack.pop()
+                else:
+                    return False
+            # adding open bracket in here 
+            else:
+                Stack.append()
+        
+        # Stack should empty if all value match with hash map
+        return True if not Stack else False
